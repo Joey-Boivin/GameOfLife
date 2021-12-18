@@ -6,10 +6,12 @@
  * \author Joey Boivin
  */
 
-#include "vector"
+#include "array"
 
+const int MAX_SIZE = 15;
 namespace GOL {
-void calculateNextState(std::vector<std::vector<bool>> &p_currentStateBoard);
+void calculateNextState(std::array<std::array<bool, MAX_SIZE+1>, MAX_SIZE+1> &p_currentStateBoard);
+int neighbourTotal(std::array<std::array<bool, MAX_SIZE+1>, MAX_SIZE+1> &p_currentStateBoard, int posX, int posY);
 }
 
 #endif // SOURCE_H
