@@ -1,3 +1,9 @@
+/**
+ * \file   StateCalculator.cpp
+ * \brief  File that contains the implementations of functions that will be used to calculate the next state
+ * \author Joey Boivin
+ */
+
 #include "StateCalculator.h"
 
 using namespace std;
