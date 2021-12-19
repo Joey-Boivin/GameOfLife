@@ -8,10 +8,10 @@
 
 #include "array"
 
-const int MAX_SIZE = 15;
+const int SIZE = 5;
 namespace GOL {
-void calculateNextState(std::array<std::array<bool, MAX_SIZE+1>, MAX_SIZE+1> &p_currentStateBoard);
-int neighbourTotal(std::array<std::array<bool, MAX_SIZE+1>, MAX_SIZE+1> &p_currentStateBoard, int posX, int posY);
+void calculateNextState(std::array<std::array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard);
+int neighbourTotal(std::array<std::array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard, int posX, int posY);
 }
 
 #endif // SOURCE_H

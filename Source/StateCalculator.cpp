@@ -3,12 +3,12 @@
 using namespace std;
 
 namespace GOL {
-    void calculateNextState(array<array<bool, MAX_SIZE+1>, MAX_SIZE+1> &p_currentStateBoard){
+    void calculateNextState(array<array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard){
 
-        array<array<bool, MAX_SIZE+1>, MAX_SIZE+1> nextStateBoard = {};
+        array<array<bool, SIZE+1>, SIZE+1> nextStateBoard = {};
 
-        for (int i(1); i < MAX_SIZE; i++) {
-            for (int j(1); j< MAX_SIZE; j++){
+        for (int i(1); i < SIZE; i++) {
+            for (int j(1); j< SIZE; j++){
                  int total = neighbourTotal(p_currentStateBoard, i, j);
                  if(p_currentStateBoard[i][j]){
                      if (total == 2 || total == 3){
@@ -22,11 +22,12 @@ namespace GOL {
 
             }
         }
+        p_currentStateBoard = nextStateBoard;
 
 
     }
 
-    int neighbourTotal(array<array<bool, MAX_SIZE+1>, MAX_SIZE+1> &p_currentStateBoard, int posX, int posY){
+    int neighbourTotal(array<array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard, int posX, int posY){
 
         int total {0};
 
