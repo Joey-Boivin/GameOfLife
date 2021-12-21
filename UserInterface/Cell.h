@@ -10,7 +10,7 @@ public:
 
     Cell(bool isAlive = false);
     bool isAlive();
-    void setIsAlive();
+    void setIsAlive(bool p_newState);
 
 private:
     bool m_isAlive;
