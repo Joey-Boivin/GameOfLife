@@ -1,3 +1,7 @@
 #include "GOLMainWindow.h"
 
-GOLMainWIndow::GOLMainWIndow() { };
+GOLMainWIndow::GOLMainWIndow()
+{
+    setWindowTitle("Conway's Game Of Life. A solution by Joey Boivin.");
+
+}
