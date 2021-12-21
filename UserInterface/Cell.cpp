@@ -1,6 +1,5 @@
 #include "Cell.h"
 
-Cell::Cell()
-{
+Cell::Cell(bool isAlive): m_isAlive(isAlive) { };
 
-}
+
