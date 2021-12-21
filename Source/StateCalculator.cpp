@@ -9,6 +9,10 @@
 using namespace std;
 
 namespace GOL {
+    /**
+     * \brief Function that calculates the next state of the board
+     * \param[in] p_currentStateBoard, a 2d array of boolean values. These boolean values are true if the cells are alive
+     */
     void calculateNextState(array<array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard){
 
         array<array<bool, SIZE+1>, SIZE+1> nextStateBoard = {};
@@ -33,18 +37,24 @@ namespace GOL {
 
     }
 
-    int neighbourTotal(array<array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard, int posX, int posY){
+    /**
+     * \brief Function that calculates the total value of a cell's neighbourhood
+     * \param[in] p_currentStateBoard, a 2d array of boolean values
+     * \param[in] posX, the X position
+     * \param[in] posY, the Y position
+     */
+    int neighbourTotal(array<array<bool, SIZE+1>, SIZE+1> &p_currentStateBoard, int p_posX, int p_posY){
 
         int total {0};
 
-        total += p_currentStateBoard[posX][posY+1];
-        total += p_currentStateBoard[posX+1][posY];
-        total += p_currentStateBoard[posX+1][posY+1];
-        total += p_currentStateBoard[posX][posY-1];
-        total += p_currentStateBoard[posX-1][posY];
-        total += p_currentStateBoard[posX-1][posY-1];
-        total += p_currentStateBoard[posX+1][posY-1];
-        total += p_currentStateBoard[posX-1][posY+1];
+        total += p_currentStateBoard[p_posX][p_posY+1];
+        total += p_currentStateBoard[p_posX+1][p_posY];
+        total += p_currentStateBoard[p_posX+1][p_posY+1];
+        total += p_currentStateBoard[p_posX][p_posY-1];
+        total += p_currentStateBoard[p_posX-1][p_posY];
+        total += p_currentStateBoard[p_posX-1][p_posY-1];
+        total += p_currentStateBoard[p_posX+1][p_posY-1];
+        total += p_currentStateBoard[p_posX-1][p_posY+1];
 
         return total;
 
