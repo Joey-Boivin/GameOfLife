@@ -11,7 +11,7 @@
 
 #include "array"
 
-const int SIZE = 5;
+const int BOARD_SIZE = 5;
 
 namespace GOL {
 
