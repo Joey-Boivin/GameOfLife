@@ -9,5 +9,3 @@ bool Cell::isAlive(){
 void Cell::setIsAlive(bool p_newState){
     m_isAlive = p_newState;
 }
-
-
