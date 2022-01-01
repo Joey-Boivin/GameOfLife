@@ -15,8 +15,8 @@ const int BOARD_SIZE = 5;
 
 namespace GOL {
 
-void calculateNextState(std::array<std::array<bool, SIZE+2>, SIZE+2> &p_currentStateBoard);
-int neighbourTotal(std::array<std::array<bool, SIZE+2>, SIZE+2> &p_currentStateBoard, int p_posX, int p_posY);
+void calculateNextState(std::array<std::array<bool, BOARD_SIZE+2>, BOARD_SIZE+2> &p_currentStateBoard);
+int neighbourTotal(std::array<std::array<bool, BOARD_SIZE+2>, BOARD_SIZE+2> &p_currentStateBoard, int p_posX, int p_posY);
 
 }
 
