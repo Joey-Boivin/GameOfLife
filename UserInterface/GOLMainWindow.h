@@ -4,17 +4,19 @@
 #include <QMainWindow>
 #include <QGridLayout>
 #include <QPushButton>
+#include "Cell.h"
 
-class GOLMainWIndow : public QMainWindow
+class GOLMainWindow : public QMainWindow
 {
 
     Q_OBJECT
 
 public:
-    GOLMainWIndow();
+    GOLMainWindow();
 
-//private slots:
-//    void cellClicked();
+
+private slots:
+    void nextButtonClicked();
 
 private:
     QWidget* m_centralWidget;
@@ -24,6 +26,7 @@ private:
 
     QPushButton* m_nextButton;
 
+    std::array<std::array<Cell*, 5>, 5> m_cellGrid;
 };
 
 #endif // GOLMAINWINDOW_H

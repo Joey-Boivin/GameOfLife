@@ -9,8 +9,11 @@ class Cell : public QPushButton
 public:
 
     Cell(bool isAlive = false);
-    bool isAlive();
+    bool isAlive() const;
     void setIsAlive(bool p_newState);
+
+private slots:
+    void cellClicked();
 
 private:
     bool m_isAlive;

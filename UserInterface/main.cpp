@@ -3,7 +3,7 @@
 
 int main (int argc, char **argv){
     QApplication app(argc, argv);
-    GOLMainWIndow* myMainWindow = new GOLMainWIndow();
+    GOLMainWindow* myMainWindow = new GOLMainWindow();
     myMainWindow->show();
     return app.exec();
 }
