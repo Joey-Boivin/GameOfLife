@@ -1,6 +1,8 @@
+#include <array>
 #include "GOLMainWindow.h"
 #include "Cell.h"
 #include "../Source/StateCalculator.h"
+
 
 GOLMainWindow::GOLMainWindow()
 {
@@ -36,6 +38,8 @@ GOLMainWindow::GOLMainWindow()
 }
 
 void GOLMainWindow::nextButtonClicked(){
+
+        std::array<std::array<bool, 6>, 6> currentStateBoard = {};
 
         for (int index=0; index < m_gridLayout->count(); index++){
             QLayoutItem * item = m_gridLayout->itemAt(index);
