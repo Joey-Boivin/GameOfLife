@@ -16,7 +16,7 @@ GOLMainWindow::GOLMainWindow()
     m_nextButton = new QPushButton("Next");
     QObject::connect(m_nextButton, SIGNAL(clicked()), this, SLOT(nextButtonClicked()));
 
-    const QSize btnSize = QSize(50,50);
+    const QSize btnSize = QSize(30,30);
 
 
     for (int i(0); i < 5; i++){
@@ -32,6 +32,7 @@ GOLMainWindow::GOLMainWindow()
     setCentralWidget(m_centralWidget);
     m_mainLayout->addLayout(m_gridLayout);
     m_footerLayout->addWidget(m_nextButton);
+    m_footerLayout->setAlignment(Qt::AlignRight);
     m_mainLayout->addLayout(m_footerLayout);
     m_centralWidget->setLayout(m_mainLayout);
 
@@ -39,14 +40,19 @@ GOLMainWindow::GOLMainWindow()
 
 void GOLMainWindow::nextButtonClicked(){
 
-        std::array<std::array<bool, 6>, 6> currentStateBoard = {};
+        std::array<std::array<bool, 7>, 7> currentStateBoard = {};
 
-        for (int index=0; index < m_gridLayout->count(); index++){
-            QLayoutItem * item = m_gridLayout->itemAt(index);
+        for (int i=0; i < m_gridLayout->count(); i++){
+            for (int j=0; j < m_gridLayout->count(); j++){
+            QLayoutItem * item = m_gridLayout->itemAtPosition(i,j);
             if(dynamic_cast<QWidgetItem *>(item)){
                 QWidget* wCell = item->widget();
                 Cell* cell = dynamic_cast<Cell*>(wCell);
+                 if (cell->isAlive()){
+                    currentStateBoard[i+1][j+1] = true;
+                 }
             }
         }
+   }
 }
 
