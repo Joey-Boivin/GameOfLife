@@ -25,8 +25,6 @@ private:
     QHBoxLayout* m_footerLayout;
 
     QPushButton* m_nextButton;
-
-    std::array<std::array<Cell*, 5>, 5> m_cellGrid;
 };
 
 #endif // GOLMAINWINDOW_H

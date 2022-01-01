@@ -22,7 +22,6 @@ GOLMainWindow::GOLMainWindow()
             Cell* cell = new Cell();
             cell->setFixedSize(btnSize);
             m_gridLayout->addWidget(cell, i, j);
-            m_cellGrid[i][j] = cell;
             QObject::connect(cell, SIGNAL(clicked()), cell, SLOT(cellClicked()));
         }
     }
@@ -43,7 +42,6 @@ void GOLMainWindow::nextButtonClicked(){
             if(dynamic_cast<QWidgetItem *>(item)){
                 QWidget* wCell = item->widget();
                 Cell* cell = dynamic_cast<Cell*>(wCell);
-                cell->setIsAlive(true);
             }
         }
 }
