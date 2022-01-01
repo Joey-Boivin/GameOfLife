@@ -19,8 +19,8 @@ GOLMainWindow::GOLMainWindow()
     const QSize btnSize = QSize(30,30);
 
 
-    for (int i(0); i < 5; i++){
-        for (int j(0); j< 5; j++){
+    for (int i(0); i < BOARD_SIZE; i++){
+        for (int j(0); j< BOARD_SIZE; j++){
             Cell* cell = new Cell();
             cell->setFixedSize(btnSize);
             m_gridLayout->addWidget(cell, i, j);
@@ -40,7 +40,7 @@ GOLMainWindow::GOLMainWindow()
 
 void GOLMainWindow::nextButtonClicked(){
 
-        std::array<std::array<bool, 7>, 7> currentStateBoard = {};
+        std::array<std::array<bool, BOARD_SIZE+2>, BOARD_SIZE+2> currentStateBoard = {};
 
         for (int i=0; i < m_gridLayout->count(); i++){
             for (int j=0; j < m_gridLayout->count(); j++){
@@ -51,8 +51,25 @@ void GOLMainWindow::nextButtonClicked(){
                  if (cell->isAlive()){
                     currentStateBoard[i+1][j+1] = true;
                  }
+
             }
         }
    }
-}
+    GOL::calculateNextState(currentStateBoard);
+    for (int i=0; i < m_gridLayout->count(); i++){
+        for (int j=0; j < m_gridLayout->count(); j++){
+        QLayoutItem * item = m_gridLayout->itemAtPosition(i,j);
+        if(dynamic_cast<QWidgetItem *>(item)){
+            QWidget* wCell = item->widget();
+            Cell* cell = dynamic_cast<Cell*>(wCell);
+             if (currentStateBoard[i+1][j+1]){
 
+                 cell->setIsAlive(true);
+             }else{
+                 cell->setIsAlive(false);
+             }
+
+        }
+    }
+}
+}

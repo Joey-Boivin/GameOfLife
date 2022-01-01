@@ -7,6 +7,15 @@ bool Cell::isAlive() const{
 }
 
 void Cell::setIsAlive(bool p_newState){
+    if (p_newState){
+
+    setStyleSheet("background-color:black");
+
+    }else{
+
+        setStyleSheet("background-color:white");
+
+    }
     m_isAlive = p_newState;
 }
 

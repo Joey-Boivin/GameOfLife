@@ -5,6 +5,7 @@
  */
 
 #include "StateCalculator.h"
+#include <iostream>
 
 using namespace std;
 
@@ -17,21 +18,23 @@ namespace GOL {
 
         array<array<bool, BOARD_SIZE+2>, BOARD_SIZE+2> nextStateBoard = {};
 
-        for (int i(1); i < BOARD_SIZE-1; i++) {
-            for (int j(1); j< BOARD_SIZE-1; j++){
-                 int total = neighbourTotal(p_currentStateBoard, i, j);
-                 if(p_currentStateBoard[i][j]){
-                     if (total == 2 || total == 3){
-                         nextStateBoard[i][j] = true;
-                     }else{
-                         if(total==3){
-                             nextStateBoard[i][j] = true;
-                         }
-                     }
-                 }
 
-            }
+
+        for (int i(1); i < BOARD_SIZE+1; i++){
+            for (int j(1); j< BOARD_SIZE+1; j++){
+                int total = neighbourTotal(p_currentStateBoard, i, j);
+                if(p_currentStateBoard[i][j]){
+                    if (total == 2 || total == 3){
+                        nextStateBoard[i][j] = true;
+                    }
+                }else{
+
+                    if (total == 3){
+                        nextStateBoard[i][j] = true;
+                    }
+                }
         }
+}
         p_currentStateBoard = nextStateBoard;
 
 

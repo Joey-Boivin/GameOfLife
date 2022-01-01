@@ -9,9 +9,9 @@
 #define STATECALCULATOR_H
 
 
-#include "array"
+#include <array>
 
-const int BOARD_SIZE = 5;
+const int BOARD_SIZE = 20;
 
 namespace GOL {
 
