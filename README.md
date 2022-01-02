@@ -7,12 +7,4 @@ This is a quick solution a made to [Conway's game of life](https://en.wikipedia.
 First, we can select a starting pattern by clicking the cells. The alive cells are black and the dead cells are white. Then, we can click the next button on the bottom right of the
 main window. The next state will be calculated and displayed. At any point, we can modify the pattern by clicking the cells.
 
-### Starting parttern
-
-### First iteration
-
-### Second iteration
-
-### Third iteration
-
-### Fourth iteration
+![Oops! Looks like the GIF can't be shown :(](https://media.giphy.com/media/ZvSunitvCgBZTbIwqd/giphy.gif)
