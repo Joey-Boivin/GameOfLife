@@ -1,3 +1,11 @@
+/**
+ * \file main.cpp
+ * \author Joey Boivin
+ * \brief Main application file
+ * \date January 2 2022
+ */
+
+
 #include <QApplication>
 #include "GOLMainWindow.h"
 

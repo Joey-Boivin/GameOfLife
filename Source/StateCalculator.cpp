@@ -2,10 +2,10 @@
  * \file   StateCalculator.cpp
  * \brief  File that contains the implementations of functions that will be used to calculate the next state
  * \author Joey Boivin
+ * \date January 2 2022
  */
 
 #include "StateCalculator.h"
-#include <iostream>
 
 using namespace std;
 

@@ -1,11 +1,21 @@
-#include <array>
+/**
+ * \file GOLMainWindow.cpp
+ * \author Joey Boivin
+ * \brief File that contains implementation of the main window.
+ * \date January 2 2022
+ */
+
 #include "GOLMainWindow.h"
 #include "Cell.h"
 #include "../Source/StateCalculator.h"
 
+/**
+ * \brief Constructor for the main window
+ */
 
 GOLMainWindow::GOLMainWindow()
 {
+    
     setWindowTitle("Conway's Game Of Life. A solution by Joey Boivin.");
 
     m_centralWidget = new QWidget;
@@ -38,6 +48,10 @@ GOLMainWindow::GOLMainWindow()
 
 }
 
+/**
+ * \brief Slot that interacts with StateCalculator, finding the next state and updating the interface.
+ */
+
 void GOLMainWindow::nextButtonClicked(){
 
         std::array<std::array<bool, BOARD_SIZE+2>, BOARD_SIZE+2> currentStateBoard = {};
@@ -55,6 +69,7 @@ void GOLMainWindow::nextButtonClicked(){
             }
         }
    }
+        
     GOL::calculateNextState(currentStateBoard);
     for (int i=0; i < m_gridLayout->count(); i++){
         for (int j=0; j < m_gridLayout->count(); j++){
@@ -63,7 +78,6 @@ void GOLMainWindow::nextButtonClicked(){
             QWidget* wCell = item->widget();
             Cell* cell = dynamic_cast<Cell*>(wCell);
              if (currentStateBoard[i+1][j+1]){
-
                  cell->setIsAlive(true);
              }else{
                  cell->setIsAlive(false);

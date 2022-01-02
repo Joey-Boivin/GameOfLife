@@ -2,12 +2,11 @@
  * \file   StateCalculator.h
  * \brief  File that contains prototypes of functions that will be used to calculate the next state
  * \author Joey Boivin
+ * \date January 2 2022
  */
-
 
 #ifndef STATECALCULATOR_H
 #define STATECALCULATOR_H
-
 
 #include <array>
 
