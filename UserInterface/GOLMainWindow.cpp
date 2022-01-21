@@ -65,7 +65,6 @@ void GOLMainWindow::nextButtonClicked(){
                  if (cell->isAlive()){
                     currentStateBoard[i+1][j+1] = true;
                  }
-
             }
         }
    }
@@ -74,15 +73,14 @@ void GOLMainWindow::nextButtonClicked(){
     for (int i=0; i < m_gridLayout->count(); i++){
         for (int j=0; j < m_gridLayout->count(); j++){
         QLayoutItem * item = m_gridLayout->itemAtPosition(i,j);
-        if(dynamic_cast<QWidgetItem *>(item)){
+        if(static_cast<QWidgetItem *>(item)){
             QWidget* wCell = item->widget();
-            Cell* cell = dynamic_cast<Cell*>(wCell);
+            Cell* cell = static_cast<Cell*>(wCell);
              if (currentStateBoard[i+1][j+1]){
                  cell->setIsAlive(true);
              }else{
                  cell->setIsAlive(false);
              }
-
         }
     }
 }
