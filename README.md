@@ -1,6 +1,6 @@
 # Conway's game of life
 
-This is a quick solution a made to [Conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Made for self-educational purposes.
+This is a quick solution I made to [Conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Made for self-educational purposes.
 
 ## Quick example
 
